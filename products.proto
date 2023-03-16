@@ -4,11 +4,18 @@ syntax = "proto3";
 package product;
 
 service ProductController {
-  rpc GetProductById (ProductById) returns (ProductReturnType) {}
+  rpc GetProductById (ProductById) returns (Product) {}
+  rpc GetProducts (voidNoParam) returns (Products);
 }
 
 message ProductById {
   string id = 1;
+}
+
+message voidNoParam{}
+
+message Products {
+  repeated Product products = 1;
 }
 
 enum PriceType {
