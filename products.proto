@@ -3,25 +3,26 @@ syntax = "proto3";
 
 package product;
 
+import "./basic.proto";
+
 service ProductController {
   rpc GetProductById (ProductById) returns (Product) {}
-  rpc GetProducts (voidNoParam) returns (Products);
+  rpc GetProducts (Void) returns (Products);
 }
 
 message ProductById {
   string id = 1;
 }
 
-message voidNoParam{}
 
 message Products {
   repeated Product products = 1;
 }
 
 enum PriceType {
-    TL = 1;
-    USD = 2;
-    EUR = 3;
+    TL = 0;
+    USD = 1;
+    EUR =2;
   }
 
 message Price {
@@ -43,10 +44,6 @@ message Product {
   map<string, string> specs = 10;
 }
 
-message Error {
-  string message = 1;
-  string code = 2;
-}
 
 message ProductReturnType {
   oneof response {

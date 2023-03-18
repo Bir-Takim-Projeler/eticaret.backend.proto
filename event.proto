@@ -1,10 +1,11 @@
 syntax = "proto3";
 package event;
 
+import "./basic.proto";
 
 service EventService {
-  rpc TriggerEvent (TriggerEventInput) returns (Empty) {};
-  rpc BroadcastEvent (TriggerEventInput) returns (Empty) {};
+  rpc TriggerEvent (TriggerEventInput) returns (Void) {};
+  rpc BroadcastEvent (TriggerEventInput) returns (Void) {};
 }
 
 enum ProductEvents {
@@ -52,5 +53,3 @@ message TriggerEventInput {
     Events event = 2;
     repeated string data = 3;
 }
-
-message Empty { }
