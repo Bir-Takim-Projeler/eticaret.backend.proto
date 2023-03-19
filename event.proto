@@ -1,7 +1,7 @@
 syntax = "proto3";
 package event;
 
-import "./basic.proto";
+import "basic.proto";
 
 service EventService {
   rpc TriggerEvent (TriggerEventInput) returns (Void) {};
@@ -34,12 +34,12 @@ enum AuthEvents {
     UserLoginEvent = 2;
 }
 enum Events {
-   oneof EventType {
+    oneof EventType {
         ProductEvents productEvent = 1;
         SocketEvents SocketEvent = 2;
         RBACEvents rbacEvent = 3;
         AuthEvents authEvent = 4;
-   }
+    }
 }
 
 message Recipiant {

@@ -3,7 +3,7 @@ syntax = "proto3";
 
 package product;
 
-import "./basic.proto";
+import "basic.proto";
 
 service ProductController {
   rpc GetProductById (ProductById) returns (Product) {}
