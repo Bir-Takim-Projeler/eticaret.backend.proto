@@ -7,10 +7,10 @@ import "proudcts.proto";
 
 
 service CacheService {
-  rpc GetCache (CacheInput) returns (Cache) {};
-  rpc SetCache (CacheInput) returns (Empty) {};
-  rpc DelCache (CacheInput) returns (Empty) {};
-  rpc ResetCache (Empty) returns (Empty) {};
+  rpc Get (CacheInput) returns (Cache) {};
+  rpc Set (CacheInput) returns (Empty) {};
+  rpc Del (CacheInput) returns (Empty) {};
+  rpc Reset (Empty) returns (Empty) {};
 }
 
 message Error {
