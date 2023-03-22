@@ -1,11 +1,11 @@
 // products.proto
 syntax = "proto3";
 
-package product;
+package Product;
 
 import "basic.proto";
 
-service ProductController {
+service ProductService {
   rpc GetProductById (ProductById) returns (Product) {}
   rpc GetProducts (Void) returns (Products);
 }
